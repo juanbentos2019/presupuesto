@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoBudget - Proyecto</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Propuesta Sistema AutoBudget</h1>
+    <p class="subtitulo">Resumen funcional, técnico y presupuestal</p>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <div class="card">
+        <h3>2.1. Gestor de Proyectos</h3>
+        <p>ABM de proyectos, asociación de cashflows, ventas, listas de precios, fechas clave y parámetros del proyecto.</p>
+        <p><strong>Horas estimadas:</strong> 52</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.1. Gestor de Proyectos')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.2. Listas de Precios y Detalle de Unidades</h3>
+        <p>ABM de listas de precios por etapa, tipo y moneda, con fines de simulación.</p>
+        <p><strong>Horas estimadas:</strong> 58</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.2. Listas de Precios y Detalle de Unidades')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.3. Carga de Históricos</h3>
+        <p>Carga automática desde archivo contable. Detección de conceptos, omisión de subtotales, limpieza, y moneda.</p>
+        <p><strong>Horas estimadas:</strong> 72</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.3. Carga de Históricos')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.4. Proyecciones de Ventas</h3>
+        <p>Proyección de cobros y ventas, bolsa de saldos pendientes, carga de ventas efectivas.</p>
+        <p><strong>Horas estimadas:</strong> 120</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.4. Proyecciones de Ventas')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.5. Parámetros Financieros y Conceptos Proyectables</h3>
+        <p>Gestión de conceptos de costos e ingresos proyectables por distintos métodos.</p>
+        <p><strong>Horas estimadas:</strong> 86</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.5. Parámetros Financieros y Conceptos Proyectables')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.6. Índices Económicos</h3>
+        <p>Carga automática SOAP BCU, scraping de expectativas, interpolación y proyección.</p>
+        <p><strong>Horas estimadas:</strong> 60</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.6. Índices Económicos')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.7. Motor de Proyección General</h3>
+        <p>Consolidación de ingresos y egresos, cotización mensual, generación de presupuesto.</p>
+        <p><strong>Horas estimadas:</strong> 74</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.7. Motor de Proyección General')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.8. Cierre Financiero</h3>
+        <p>Simulación mes a mes con triggers, reglas de financiación, colchón y resultados.</p>
+        <p><strong>Horas estimadas:</strong> 72</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.8. Cierre Financiero')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.9. Interfaz y Reportes</h3>
+        <p>Dashboard por proyecto y etapa, gráficos y tablas, exportación a Excel y PDF.</p>
+        <p><strong>Horas estimadas:</strong> 125</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.9. Interfaz y Reportes')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.10. Módulos Necesarios de la Plataforma</h3>
+        <p>Login, permisos, admin extendido, auditoría, backups, exportación y logs.</p>
+        <p><strong>Horas estimadas:</strong> 90</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.10. Módulos Necesarios de la Plataforma')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.11. Puesta en Producción</h3>
+        <p>Deploy del sistema en servidor.</p>
+        <p><strong>Horas estimadas:</strong> 40</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.11. Puesta en Producción')">Ver pasos técnicos</button>
+      </div>
+
+      <div class="card">
+        <h3>2.12. Capacitación</h3>
+        <p>Una semana de capacitación para uso del sistema.</p>
+        <p><strong>Horas estimadas:</strong> 40</p>
+        <button class="btn-ver-pasos" onclick="abrirModal('2.12. Capacitación')">Ver pasos técnicos</button>
+      </div>
+    </section>
+
+    <section class="resumen-presupuesto" style="margin-top: 3rem;">
+      <h2>Resumen Presupuestal</h2>
+      <canvas id="graficoHoras"></canvas>
+      <div class="totales">
+        <p><strong>Total de horas:</strong> 889</p>
+        <p><strong>Costo por hora:</strong> USD 20,00</p>
+        <p class="total"><strong>Costo total del proyecto:</strong> USD 17.780,00</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <ul id="modalSteps" class="modal-steps"></ul>
+    </div>
+  </div>
+
+  <!-- Lógica -->
+  <script src="modal.js"></script>
+  <script>
+    const modulos = [
+      { titulo: "2.1. Gestor de Proyectos", horas: 52 },
+      { titulo: "2.2. Listas de Precios y Detalle de Unidades", horas: 58 },
+      { titulo: "2.3. Carga de Históricos", horas: 72 },
+      { titulo: "2.4. Proyecciones de Ventas", horas: 120 },
+      { titulo: "2.5. Parámetros Financieros y Conceptos Proyectables", horas: 86 },
+      { titulo: "2.6. Índices Económicos", horas: 60 },
+      { titulo: "2.7. Motor de Proyección General", horas: 74 },
+      { titulo: "2.8. Cierre Financiero", horas: 72 },
+      { titulo: "2.9. Interfaz y Reportes", horas: 125 },
+      { titulo: "2.10. Módulos Necesarios de la Plataforma", horas: 90 },
+      { titulo: "2.11. Puesta en Producción", horas: 40 },
+      { titulo: "2.12. Capacitación", horas: 40 }
+    ];
+
+    new Chart(document.getElementById("graficoHoras"), {
+      type: "bar",
+      data: {
+        labels: modulos.map(m => m.titulo),
+        datasets: [{
+          label: "Horas por módulo",
+          data: modulos.map(m => m.horas),
+          backgroundColor: 'rgba(0,102,204,0.6)'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        scales: {
+          x: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

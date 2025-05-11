@@ -3,35 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Presupuesto AutoBudget</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Login - AutoBudget</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #003366, #005b99);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      margin-bottom: 1.5rem;
+      color: #003366;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>📘 Propuesta Sistema AutoBudget</h1>
-    <p class="subtitulo">Resumen funcional, técnico y presupuestal</p>
-  </header>
+  <div class="login-container">
+    <h1>🔐 Acceso a AutoBudget</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <button type="submit">Ingresar</button>
+      <div class="error" id="errorMsg"></div>
+    </form>
+  </div>
 
-  <main class="container">
-    <section class="resumen">
-      <h2>1. Resumen Ejecutivo</h2>
-      <p>El sistema AutoBudget tiene como objetivo replicar y mejorar la planilla Excel utilizada por Altius para la gestión financiera de proyectos inmobiliarios, integrando carga de históricos, proyecciones automáticas, estructura paramétrica de costos e ingresos, y cierre financiero dentro de una plataforma web robusta basada en Django. Además de los módulos de negocio, se incluye un sistema de usuarios, permisos, auditoría de acciones, panel administrativo extendido y diseño de interfaz personalizada por módulo.</p>
-    </section>
-
-    <section class="grid" id="modulos"></section>
-
-    <section class="resumen-presupuesto">
-      <h2>Resumen Presupuestal</h2>
-      <canvas id="graficoHoras"></canvas>
-      <div class="totales">
-        <p><strong>Total de horas:</strong> 889</p>
-        <p><strong>Costo por hora:</strong> USD 20,00</p>
-        <p class="total"><strong>Costo total del proyecto:</strong> USD 17.780,00 + IVA</p>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

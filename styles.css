@@ -28,6 +28,9 @@ h2 {
   color: #003366;
   margin-bottom: 0.5rem;
 }
+h2.autor{
+    text-align: center;
+}
 
 .resumen {
   background: white;
