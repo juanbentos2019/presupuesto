@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Presupuesto AutoBudget</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Propuesta Sistema AutoBudget</h1>
+    <p class="subtitulo">Resumen funcional, técnico y presupuestal</p>
+  </header>
+
+  <main class="container">
+    <section class="resumen">
+      <h2>1. Resumen Ejecutivo</h2>
+      <p>El sistema AutoBudget tiene como objetivo replicar y mejorar la planilla Excel utilizada por Altius para la gestión financiera de proyectos inmobiliarios, integrando carga de históricos, proyecciones automáticas, estructura paramétrica de costos e ingresos, y cierre financiero dentro de una plataforma web robusta basada en Django. Además de los módulos de negocio, se incluye un sistema de usuarios, permisos, auditoría de acciones, panel administrativo extendido y diseño de interfaz personalizada por módulo.</p>
+    </section>
+
+    <section class="grid" id="modulos"></section>
+
+    <section class="resumen-presupuesto">
+      <h2>Resumen Presupuestal</h2>
+      <canvas id="graficoHoras"></canvas>
+      <div class="totales">
+        <p><strong>Total de horas:</strong> 889</p>
+        <p><strong>Costo por hora:</strong> USD 20,00</p>
+        <p class="total"><strong>Costo total del proyecto:</strong> USD 17.780,00 + IVA</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
