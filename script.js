@@ -109,7 +109,7 @@ const modulos = [
   },
   {
     titulo: "2.10. Módulos Necesarios de la Plataforma",
-    horas: 90,
+    horas: 100,
     descripcion: "Login, permisos, admin extendido, auditoría, backups, exportación y logs.",
     pasos: [
       "Configurar sistema seguro de autenticación y gestión de usuarios en Django",
@@ -121,7 +121,7 @@ const modulos = [
   },
   {
     titulo: "2.11. Puesta en Producción",
-    horas: 40,
+    horas: 60,
     descripcion: "Deploy del sistema en servidor.",
     pasos: [
       "Configurar servidor para despliegue seguro y eficiente",
@@ -131,7 +131,7 @@ const modulos = [
   },
   {
     titulo: "2.12. Capacitación",
-    horas: 40,
+    horas: 10,
     descripcion: "Una semana de capacitación para uso del sistema.",
     pasos: [
       "Preparar material didáctico detallado y comprehensivo",
