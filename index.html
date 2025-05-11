@@ -1,73 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - AutoBudget</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <style>
-    body {
-      background: linear-gradient(to right, #003366, #005b99);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .login-container {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .login-container h1 {
-      margin-bottom: 1.5rem;
-      color: #003366;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background: #003366;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-    .error {
-      color: red;
-      margin-top: 1rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Login - AutoBudget</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            border: none;
+            background: #003366;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-container button:hover {
+            background: #005080;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>🔐 Acceso a AutoBudget</h1>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Usuario" required />
-      <input type="password" id="password" placeholder="Contraseña" required />
-      <button type="submit">Ingresar</button>
-      <div class="error" id="errorMsg"></div>
-    </form>
-  </div>
+<div class="login-container">
+    <h2>AutoBudget - Acceso</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="validarLogin()">Ingresar</button>
+</div>
 
-  <script src="login.js"></script>
+<script>
+function validarLogin() {
+    const usuario = document.getElementById('usuario').value;
+    const password = document.getElementById('password').value;
+
+    if(usuario === 'admin' && password === '123456') {
+        window.location.href = 'main.html';
+    } else {
+        alert('Usuario o contraseña incorrectos.');
+    }
+}
+</script>
 </body>
 </html>

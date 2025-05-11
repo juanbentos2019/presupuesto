@@ -28,9 +28,6 @@ h2 {
   color: #003366;
   margin-bottom: 0.5rem;
 }
-h2.autor{
-    text-align: center;
-}
 
 .resumen {
   background: white;
@@ -51,6 +48,12 @@ h2.autor{
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.01);
 }
 
 .card h3 {
@@ -78,4 +81,57 @@ h2.autor{
   font-size: 1.25rem;
   color: #006400;
   font-weight: bold;
+}
+
+/* Estilos para modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#modal-title {
+  margin-top: 0;
+  color: #003366;
+}
+
+#modal-steps {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+#modal-steps li {
+  margin-bottom: 0.5rem;
 }
