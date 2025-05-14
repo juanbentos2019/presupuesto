@@ -32,7 +32,7 @@
     </section>
 
     <!-- Sección de Hitos -->
-    <section class="resumen-presupuesto fade-in">
+    <section class="resumen-presupuesto fade-in" id="seccion-hitos">
       <h2>Hitos de Entregables y Cobros</h2>
       <p>División mensual del proyecto, con entregables definidos y cobros acordes. El primer pago es por adelantado y asegura la planificación y reserva del equipo.</p>
       <div class="tabla-hitos">
@@ -105,6 +105,12 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Botón de impresión -->
+      <div class="print-buttons">
+        <button class="btn-imprimir" onclick="imprimirTodo()">🖨️ Imprimir Página Completa</button>
+        <button class="btn-imprimir" onclick="imprimirHitos()">🧾 Imprimir Solo Hitos</button>
       </div>
     </section>
   </main>

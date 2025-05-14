@@ -186,3 +186,32 @@ new Chart(document.getElementById("graficoHoras"), {
     }
   }
 });
+
+// Botones de impresión
+function imprimirTodo() {
+  window.print();
+}
+
+function imprimirHitos() {
+  const seccion = document.getElementById("seccion-hitos").cloneNode(true);
+  const ventana = window.open('', '_blank', 'width=800,height=600');
+  ventana.document.write(`
+    <html>
+      <head>
+        <title>Hitos - AutoBudget</title>
+        <style>
+          body { font-family: 'Segoe UI', sans-serif; padding: 2rem; }
+          table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+          th, td { padding: 1rem; border-bottom: 1px solid #ccc; }
+          th { background: #003366; color: white; }
+          td strong { color: #006400; }
+        </style>
+      </head>
+      <body>
+        ${seccion.innerHTML}
+        <script>window.onload = function() { window.print(); window.close(); };<\/script>
+      </body>
+    </html>
+  `);
+  ventana.document.close();
+}
