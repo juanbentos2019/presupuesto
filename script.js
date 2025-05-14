@@ -141,8 +141,9 @@ const modulos = [
   }
 ];
 
+// Render de los módulos
 const container = document.getElementById("modulos");
-modulos.forEach((mod, index) => {
+modulos.forEach((mod) => {
   const div = document.createElement("div");
   div.className = "card";
   div.innerHTML = `
@@ -154,6 +155,7 @@ modulos.forEach((mod, index) => {
   container.appendChild(div);
 });
 
+// Modal
 function mostrarModal(mod) {
   document.getElementById("modal-title").textContent = mod.titulo;
   const pasosLista = document.getElementById("modal-steps");
@@ -165,6 +167,7 @@ document.querySelector(".close-button").addEventListener("click", () => {
   document.getElementById("modal-overlay").classList.remove("active");
 });
 
+// Gráfico
 new Chart(document.getElementById("graficoHoras"), {
   type: "bar",
   data: {
