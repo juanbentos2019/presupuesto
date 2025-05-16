@@ -124,9 +124,7 @@ const modulos = [
     horas: 60,
     descripcion: "Deploy del sistema en servidor.",
     pasos: [
-      "Configurar servidor para despliegue seguro y eficiente",
-      "Implementar prácticas de integración continua y despliegue continuo (CI/CD)",
-      "Monitorear continuamente la aplicación con herramientas avanzadas"
+      "Configurar servidor para despliegue seguro y eficiente, (Servidor en la nube implica un costo aparte)"
     ]
   },
   {
