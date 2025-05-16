@@ -25,7 +25,7 @@ const modulos = [
   },
   {
     titulo: "2.3. Carga de Históricos",
-    horas: 74,
+    horas: 72,
     descripcion: "Carga automática desde archivo contable. Detección de conceptos, omisión de subtotales, limpieza y moneda.",
     pasos: [
       "Leer y parsear archivos Excel complejos con pandas",
@@ -85,7 +85,7 @@ const modulos = [
   },
   {
     titulo: "2.8. Cierre Financiero",
-    horas: 74,
+    horas: 72,
     descripcion: "Simulación mes a mes con triggers, reglas de financiación, colchón y resultados.",
     pasos: [
       "Definir y programar reglas complejas de negocio financiero",
@@ -109,7 +109,7 @@ const modulos = [
   },
   {
     titulo: "2.10. Módulos Necesarios de la Plataforma",
-    horas: 105,
+    horas: 106,
     descripcion: "Login, permisos, admin extendido, auditoría, backups, exportación y logs.",
     pasos: [
       "Configurar sistema seguro de autenticación y gestión de usuarios en Django",
@@ -249,26 +249,3 @@ function imprimirHitos() {
   `);
   ventana.document.close();
 }
-
-function actualizarHitos(costoTotalProyecto) {
-  const filas = document.querySelectorAll(".tabla-hitos tbody tr");
-
-  filas.forEach(fila => {
-    const porcentajeTexto = fila.children[2].textContent.trim().replace('%', '');
-    const porcentaje = parseFloat(porcentajeTexto);
-    
-    const montoUSD = (costoTotalProyecto * porcentaje / 100).toFixed(2);
-    const iva = (montoUSD * 0.22).toFixed(2);
-    const totalConIVA = (parseFloat(montoUSD) + parseFloat(iva)).toFixed(2);
-
-    fila.children[3].textContent = parseFloat(montoUSD).toLocaleString();
-    fila.children[4].textContent = parseFloat(iva).toLocaleString();
-    fila.children[5].innerHTML = `<strong>${parseFloat(totalConIVA).toLocaleString()}</strong>`;
-  });
-}
-
-window.addEventListener('load', function() {
-  console.log("Calculando totales...");
-  const { costoTotal } = calcularTotales();
-  actualizarHitos(costoTotal);
-});
